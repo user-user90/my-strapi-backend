@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fotterdetails",
+  "info": {
+    "singularName": "fotterdetail",
+    "pluralName": "fotterdetails",
+    "displayName": "fotterDetail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "footer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::footer.footer",
+      "inversedBy": "fotterdetails"
+    },
+    "footers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::footer.footer",
+      "mappedBy": "fotterdetail"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "ABOUT",
+        "HOME",
+        "PRIVACY-POLICY",
+        "FAQ",
+        "SHIPPING-RETURN-POLICY"
+      ]
+    }
+  }
+}

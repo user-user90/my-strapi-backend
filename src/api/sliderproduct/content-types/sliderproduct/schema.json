@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sliderproducts",
+  "info": {
+    "singularName": "sliderproduct",
+    "pluralName": "sliderproducts",
+    "displayName": "sliderProduct"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "allproduct": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::allproduct.allproduct",
+      "inversedBy": "sliderproducts"
+    }
+  }
+}
